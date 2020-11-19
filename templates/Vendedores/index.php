@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Vendedore[]|\Cake\Collection\CollectionInterface $vendedores
@@ -8,7 +9,7 @@
     <?= $this->Html->link(__('New Vendedore'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Vendedores') ?></h3>
     <div class="table-responsive">
-        <table>
+        <table class="table table-striped table-bordered display " style="width:100%">
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
@@ -25,24 +26,24 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($vendedores as $vendedore): ?>
-                <tr>
-                    <td><?= $this->Number->format($vendedore->id) ?></td>
-                    <td><?= h($vendedore->documento) ?></td>
-                    <td><?= h($vendedore->nombres) ?></td>
-                    <td><?= h($vendedore->apellidos) ?></td>
-                    <td><?= h($vendedore->direccion) ?></td>
-                    <td><?= h($vendedore->telefono) ?></td>
-                    <td><?= h($vendedore->correo) ?></td>
-                    <td><?= $this->Number->format($vendedore->salario) ?></td>
-                    <td><?= h($vendedore->created) ?></td>
-                    <td><?= h($vendedore->modified) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $vendedore->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $vendedore->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $vendedore->id], ['confirm' => __('Are you sure you want to delete # {0}?', $vendedore->id)]) ?>
-                    </td>
-                </tr>
+                <?php foreach ($vendedores as $vendedore) : ?>
+                    <tr>
+                        <td><?= $this->Number->format($vendedore->id) ?></td>
+                        <td><?= h($vendedore->documento) ?></td>
+                        <td><?= h($vendedore->nombres) ?></td>
+                        <td><?= h($vendedore->apellidos) ?></td>
+                        <td><?= h($vendedore->direccion) ?></td>
+                        <td><?= h($vendedore->telefono) ?></td>
+                        <td><?= h($vendedore->correo) ?></td>
+                        <td><?= $this->Number->format($vendedore->salario) ?></td>
+                        <td><?= h($vendedore->created) ?></td>
+                        <td><?= h($vendedore->modified) ?></td>
+                        <td >
+                            <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Vendedores', 'action' => 'view', $vendedore->id], ['escape' => false, 'class' => 'btn btn-success', 'title' => 'Ver Vendedores']) ?>
+                            <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Vendedores', 'action' => 'edit', $vendedore->id], ['escape' => false, 'class' => 'btn btn-info', 'title' => 'Editar Vendedor']) ?>
+                            <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:15px"></i>', ['controller' => 'Vendedores', 'action' => 'delete', $vendedore->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $vendedore->id), 'escape' => false, 'class' => 'btn btn-danger', 'title' => 'Eliminar Vendedor']) ?>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

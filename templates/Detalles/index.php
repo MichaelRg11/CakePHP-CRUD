@@ -33,10 +33,10 @@
                     <td><?= $detalle->has('producto') ? $this->Html->link($detalle->producto->id, ['controller' => 'Productos', 'action' => 'view', $detalle->producto->id]) : '' ?></td>
                     <td><?= h($detalle->created) ?></td>
                     <td><?= h($detalle->modified) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $detalle->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $detalle->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $detalle->id], ['confirm' => __('Are you sure you want to delete # {0}?', $detalle->id)]) ?>
+                    <td >
+                    <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Detalles', 'action' => 'view', $detalle->id],['escape' => false,'class'=>'btn btn-success','title'=>'Ver Detalle']) ?>
+                        <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Detalles', 'action' => 'edit', $detalle->id],['escape' => false,'class'=>'btn btn-info','title'=>'Editar Detalle']) ?>
+                        <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:15px"></i>', ['controller' => 'Detalles','action' => 'delete', $detalle->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $detalle->id),'escape' => false,'class'=>'btn btn-danger','title'=>'Eliminar Detalle']) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

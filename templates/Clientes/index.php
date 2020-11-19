@@ -4,12 +4,13 @@
  * @var \App\Model\Entity\Cliente[]|\Cake\Collection\CollectionInterface $clientes
  */
 ?>
+
 <div class="clientes index content">
     <?= $this->Html->link(__('New Cliente'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Clientes') ?></h3>
     <div class="table-responsive">
-        <table class="table-sm">
-            <thead>
+        <table class="table table-striped table-bordered display " style="width:100%">
+            <thead class="thead-gray">
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('documento') ?></th>
@@ -36,9 +37,9 @@
                     <td><?= h($cliente->created) ?></td>
                     <td><?= h($cliente->modified) ?></td>
                     <td >
-                        <?= $this->Html->link('<i class="fa fa-eye" style="font-size:24px"></i>', ['controller' => 'Clientes', 'action' => 'view', $cliente->id],['escape' => false,'class'=>'edit-icon','title'=>'Ver Cliente']) ?>
-                        <?= $this->Html->link('<i class="fa fa-edit" style="font-size:24px"></i>', ['controller' => 'Clientes', 'action' => 'edit', $cliente->id],['escape' => false,'class'=>'edit-icon','title'=>'Editar Cliente']) ?>
-                        <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:24px"></i>', ['controller' => 'Clientes','action' => 'delete', $cliente->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $cliente->id),'escape' => false,'class'=>'delete-icon','title'=>'Eliminar Cliente']) ?>
+                        <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Clientes', 'action' => 'view', $cliente->id],['escape' => false,'class'=>'btn btn-success','title'=>'Ver Cliente']) ?>
+                        <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Clientes', 'action' => 'edit', $cliente->id],['escape' => false,'class'=>'btn btn-info','title'=>'Editar Cliente']) ?>
+                        <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:15px"></i>', ['controller' => 'Clientes','action' => 'delete', $cliente->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $cliente->id),'escape' => false,'class'=>'btn btn-danger','title'=>'Eliminar Cliente']) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

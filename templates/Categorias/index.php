@@ -8,8 +8,8 @@
     <?= $this->Html->link(__('New Categoria'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Categorias') ?></h3>
     <div class="table-responsive">
-        <table>
-            <thead>
+        <table class="table table-striped table-bordered display " style="width:100%">
+            <thead class="thead-gray">
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('descripcion') ?></th>
@@ -25,10 +25,10 @@
                     <td><?= h($categoria->descripcion) ?></td>
                     <td><?= h($categoria->created) ?></td>
                     <td><?= h($categoria->modified) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $categoria->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $categoria->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $categoria->id], ['confirm' => __('Are you sure you want to delete # {0}?', $categoria->id)]) ?>
+                    <td>
+                    <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Categorias', 'action' => 'view', $categoria->id],['escape' => false,'class'=>'btn btn-success','title'=>'Ver Categoria']) ?>
+                        <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Categorias', 'action' => 'edit', $categoria->id],['escape' => false,'class'=>'btn btn-info','title'=>'Editar Categoria']) ?>
+                        <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:15px"></i>', ['controller' => 'Categorias','action' => 'delete', $categoria->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $categoria->id),'escape' => false,'class'=>'btn btn-danger','title'=>'Eliminar Categoria']) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

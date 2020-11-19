@@ -14,7 +14,7 @@
             <?= $this->Html->link(__('New Categoria'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
-    <div class="column-responsive column-80">
+    <div class="column-responsive column-50">
         <div class="categorias view content">
             <h3><?= h($categoria->id) ?></h3>
             <table>

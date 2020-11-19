@@ -8,7 +8,7 @@
     <?= $this->Html->link(__('New Producto'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Productos') ?></h3>
     <div class="table-responsive">
-        <table>
+        <table class="table table-striped table-bordered display " style="width:100%">
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
@@ -35,10 +35,10 @@
                     <td><?= $producto->has('categoria') ? $this->Html->link($producto->categoria->id.'-'.$producto->categoria->descripcion, ['controller' => 'Categorias', 'action' => 'view', $producto->categoria->id]) : '' ?></td>
                     <td><?= h($producto->created) ?></td>
                     <td><?= h($producto->modified) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $producto->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $producto->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $producto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $producto->id)]) ?>
+                    <td>
+                    <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Productos', 'action' => 'view', $producto->id],['escape' => false,'class'=>'btn btn-success','title'=>'Ver Producto']) ?>
+                        <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Productos', 'action' => 'edit', $producto->id],['escape' => false,'class'=>'btn btn-info','title'=>'Editar Producto']) ?>
+                        <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:15px"></i>', ['controller' => 'Productos','action' => 'delete', $producto->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $producto->id),'escape' => false,'class'=>'btn btn-danger','title'=>'Eliminar Producto']) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

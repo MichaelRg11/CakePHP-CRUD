@@ -14,7 +14,7 @@
             <?= $this->Html->link(__('New Vendedore'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
-    <div class="column-responsive column-80">
+    <div class="column-responsive column-100">
         <div class="vendedores view content">
             <h3><?= h($vendedore->id) ?></h3>
             <table>
