@@ -29,7 +29,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    
+
 
     <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
 
@@ -61,7 +61,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark" >
+    <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Facturacion</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -92,6 +92,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             <?= $this->Html->link(__('Ventas'), ['controller' => 'Ventas'], ['class' => 'dropdown-item']) ?> </a>
                         <a class="dropdown-item">
                             <?= $this->Html->link(__('Detalle'), ['controller' => 'Detalles'], ['class' => 'dropdown-item']) ?> </a>
+                        <a class="dropdown-item">
+                            <?= $this->Html->link(__('Taller'), ['controller' => 'Taller'], ['class' => 'dropdown-item']) ?> </a>
 
 
                 </li>

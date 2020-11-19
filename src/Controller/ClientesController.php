@@ -33,7 +33,7 @@ class ClientesController extends AppController
 
      public function hola()
      {
-         echo "hola controldaor";
+         echo "hola controlador";
      }
 
 
