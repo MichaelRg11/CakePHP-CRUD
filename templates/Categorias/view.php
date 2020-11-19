@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Categoria $categoria
@@ -14,7 +15,7 @@
             <?= $this->Html->link(__('New Categoria'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
-    <div class="column-responsive column-50">
+    <div class="column-responsive column-100">
         <div class="categorias view content">
             <h3><?= h($categoria->id) ?></h3>
             <table>
@@ -26,14 +27,7 @@
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($categoria->id) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Created') ?></th>
-                    <td><?= h($categoria->created) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Modified') ?></th>
-                    <td><?= h($categoria->modified) ?></td>
-                </tr>
+
             </table>
         </div>
     </div>

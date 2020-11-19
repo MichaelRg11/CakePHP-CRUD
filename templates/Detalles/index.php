@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Detalle[]|\Cake\Collection\CollectionInterface $detalles
@@ -8,7 +9,7 @@
     <?= $this->Html->link(__('New Detalle'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Detalles') ?></h3>
     <div class="table-responsive">
-        <table>
+        <table class="table table-striped table-bordered display " style="width:100%">
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
@@ -17,28 +18,26 @@
                     <th><?= $this->Paginator->sort('descuento') ?></th>
                     <th><?= $this->Paginator->sort('ventas_id') ?></th>
                     <th><?= $this->Paginator->sort('productos_id') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
+
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($detalles as $detalle): ?>
-                <tr>
-                    <td><?= $this->Number->format($detalle->id) ?></td>
-                    <td><?= $this->Number->format($detalle->precio) ?></td>
-                    <td><?= $this->Number->format($detalle->cantidad) ?></td>
-                    <td><?= $this->Number->format($detalle->descuento) ?></td>
-                    <td><?= $detalle->has('venta') ? $this->Html->link($detalle->venta->id, ['controller' => 'Ventas', 'action' => 'view', $detalle->venta->id]) : '' ?></td>
-                    <td><?= $detalle->has('producto') ? $this->Html->link($detalle->producto->id, ['controller' => 'Productos', 'action' => 'view', $detalle->producto->id]) : '' ?></td>
-                    <td><?= h($detalle->created) ?></td>
-                    <td><?= h($detalle->modified) ?></td>
-                    <td >
-                    <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Detalles', 'action' => 'view', $detalle->id],['escape' => false,'class'=>'btn btn-success','title'=>'Ver Detalle']) ?>
-                        <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Detalles', 'action' => 'edit', $detalle->id],['escape' => false,'class'=>'btn btn-info','title'=>'Editar Detalle']) ?>
-                        <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:15px"></i>', ['controller' => 'Detalles','action' => 'delete', $detalle->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $detalle->id),'escape' => false,'class'=>'btn btn-danger','title'=>'Eliminar Detalle']) ?>
-                    </td>
-                </tr>
+                <?php foreach ($detalles as $detalle) : ?>
+                    <tr>
+                        <td><?= $this->Number->format($detalle->id) ?></td>
+                        <td><?= $this->Number->format($detalle->precio) ?></td>
+                        <td><?= $this->Number->format($detalle->cantidad) ?></td>
+                        <td><?= $this->Number->format($detalle->descuento) ?></td>
+                        <td><?= $detalle->has('venta') ? $this->Html->link($detalle->venta->id, ['controller' => 'Ventas', 'action' => 'view', $detalle->venta->id]) : '' ?></td>
+                        <td><?= $detalle->has('producto') ? $this->Html->link($detalle->producto->id, ['controller' => 'Productos', 'action' => 'view', $detalle->producto->id]) : '' ?></td>
+
+                        <td>
+                            <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Detalles', 'action' => 'view', $detalle->id], ['escape' => false, 'class' => 'btn btn-success', 'title' => 'Ver Detalle']) ?>
+                            <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Detalles', 'action' => 'edit', $detalle->id], ['escape' => false, 'class' => 'btn btn-info', 'title' => 'Editar Detalle']) ?>
+                            <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:15px"></i>', ['controller' => 'Detalles', 'action' => 'delete', $detalle->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $detalle->id), 'escape' => false, 'class' => 'btn btn-danger', 'title' => 'Eliminar Detalle']) ?>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

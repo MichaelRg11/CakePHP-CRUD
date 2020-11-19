@@ -20,8 +20,8 @@
                     <th><?= $this->Paginator->sort('telefono') ?></th>
                     <th><?= $this->Paginator->sort('correo') ?></th>
                     <th><?= $this->Paginator->sort('salario') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
+
+
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -36,9 +36,8 @@
                         <td><?= h($vendedore->telefono) ?></td>
                         <td><?= h($vendedore->correo) ?></td>
                         <td><?= $this->Number->format($vendedore->salario) ?></td>
-                        <td><?= h($vendedore->created) ?></td>
-                        <td><?= h($vendedore->modified) ?></td>
-                        <td >
+
+                        <td>
                             <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Vendedores', 'action' => 'view', $vendedore->id], ['escape' => false, 'class' => 'btn btn-success', 'title' => 'Ver Vendedores']) ?>
                             <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Vendedores', 'action' => 'edit', $vendedore->id], ['escape' => false, 'class' => 'btn btn-info', 'title' => 'Editar Vendedor']) ?>
                             <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:15px"></i>', ['controller' => 'Vendedores', 'action' => 'delete', $vendedore->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $vendedore->id), 'escape' => false, 'class' => 'btn btn-danger', 'title' => 'Eliminar Vendedor']) ?>

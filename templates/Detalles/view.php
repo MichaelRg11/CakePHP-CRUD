@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Detalle $detalle
@@ -14,7 +15,7 @@
             <?= $this->Html->link(__('New Detalle'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
-    <div class="column-responsive column-80">
+    <div class="column-responsive column-50">
         <div class="detalles view content">
             <h3><?= h($detalle->id) ?></h3>
             <table>
@@ -42,14 +43,7 @@
                     <th><?= __('Descuento') ?></th>
                     <td><?= $this->Number->format($detalle->descuento) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Created') ?></th>
-                    <td><?= h($detalle->created) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Modified') ?></th>
-                    <td><?= h($detalle->modified) ?></td>
-                </tr>
+
             </table>
         </div>
     </div>

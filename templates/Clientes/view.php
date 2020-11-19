@@ -46,14 +46,7 @@
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($cliente->id) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Created') ?></th>
-                    <td><?= h($cliente->created) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Modified') ?></th>
-                    <td><?= h($cliente->modified) ?></td>
-                </tr>
+               
             </table>
         </div>
     </div>

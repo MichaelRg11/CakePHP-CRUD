@@ -54,14 +54,7 @@
                     <th><?= __('Fecha') ?></th>
                     <td><?= h($venta->fecha) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Created') ?></th>
-                    <td><?= h($venta->created) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Modified') ?></th>
-                    <td><?= h($venta->modified) ?></td>
-                </tr>
+               
             </table>
         </div>
     </div>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Venta[]|\Cake\Collection\CollectionInterface $ventas
@@ -8,7 +9,7 @@
     <?= $this->Html->link(__('New Venta'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Ventas') ?></h3>
     <div class="table-responsive">
-        <table>
+        <table class="table table-striped table-bordered display " style="width:100%">
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
@@ -20,31 +21,29 @@
                     <th><?= $this->Paginator->sort('total') ?></th>
                     <th><?= $this->Paginator->sort('clientes_id') ?></th>
                     <th><?= $this->Paginator->sort('vendedores_id') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
+                    
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($ventas as $venta): ?>
-                <tr>
-                    <td><?= $this->Number->format($venta->id) ?></td>
-                    <td><?= h($venta->numero) ?></td>
-                    <td><?= h($venta->fecha) ?></td>
-                    <td><?= $this->Number->format($venta->subtotal) ?></td>
-                    <td><?= $this->Number->format($venta->iva) ?></td>
-                    <td><?= $this->Number->format($venta->descuento) ?></td>
-                    <td><?= $this->Number->format($venta->total) ?></td>
-                    <td><?= $venta->cliente->FullName?></td>
-                    <td><?= $venta->vendedore->FullName?></td>
-                    <td><?= h($venta->created) ?></td>
-                    <td><?= h($venta->modified) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $venta->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $venta->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $venta->id], ['confirm' => __('Are you sure you want to delete # {0}?', $venta->id)]) ?>
-                    </td>
-                </tr>
+                <?php foreach ($ventas as $venta) : ?>
+                    <tr>
+                        <td><?= $this->Number->format($venta->id) ?></td>
+                        <td><?= h($venta->numero) ?></td>
+                        <td><?= h($venta->fecha) ?></td>
+                        <td><?= $this->Number->format($venta->subtotal) ?></td>
+                        <td><?= $this->Number->format($venta->iva) ?></td>
+                        <td><?= $this->Number->format($venta->descuento) ?></td>
+                        <td><?= $this->Number->format($venta->total) ?></td>
+                        <td><?= $venta->cliente->FullName ?></td>
+                        <td><?= $venta->vendedore->FullName ?></td>
+                       
+                        <td >
+                            <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Ventas', 'action' => 'view', $venta->id], ['escape' => false, 'class' => 'btn btn-success', 'title' => 'Ver Venta']) ?>
+                            <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Ventas', 'action' => 'edit', $venta->id], ['escape' => false, 'class' => 'btn btn-info', 'title' => 'Editar Venta']) ?>
+                            <?= $this->Form->postLink('<i class="fa fa-trash" style="font-size:15px"></i>', ['controller' => 'Ventas', 'action' => 'delete', $venta->id], ['confirm' => __('Estás seguro de que quieres eliminar el # {0}?', $venta->id), 'escape' => false, 'class' => 'btn btn-danger', 'title' => 'Eliminar Venta']) ?>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Vendedore $vendedore
@@ -50,14 +51,7 @@
                     <th><?= __('Salario') ?></th>
                     <td><?= $this->Number->format($vendedore->salario) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Created') ?></th>
-                    <td><?= h($vendedore->created) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Modified') ?></th>
-                    <td><?= h($vendedore->modified) ?></td>
-                </tr>
+
             </table>
         </div>
     </div>

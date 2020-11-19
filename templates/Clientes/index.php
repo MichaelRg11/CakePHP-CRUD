@@ -19,8 +19,7 @@
                     <th><?= $this->Paginator->sort('direccion') ?></th>
                     <th><?= $this->Paginator->sort('telefono') ?></th>
                     <th><?= $this->Paginator->sort('correo') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
+                   
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -34,8 +33,7 @@
                     <td><?= h($cliente->direccion) ?></td>
                     <td><?= h($cliente->telefono) ?></td>
                     <td><?= h($cliente->correo) ?></td>
-                    <td><?= h($cliente->created) ?></td>
-                    <td><?= h($cliente->modified) ?></td>
+                    
                     <td >
                         <?= $this->Html->link('<i class="fa fa-eye" style="font-size:15px"></i>', ['controller' => 'Clientes', 'action' => 'view', $cliente->id],['escape' => false,'class'=>'btn btn-success','title'=>'Ver Cliente']) ?>
                         <?= $this->Html->link('<i class="fas fa-pencil-alt" style="font-size:15px"></i>', ['controller' => 'Clientes', 'action' => 'edit', $cliente->id],['escape' => false,'class'=>'btn btn-info','title'=>'Editar Cliente']) ?>
