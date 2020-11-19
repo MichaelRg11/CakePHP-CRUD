@@ -41,15 +41,45 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
-        </div>
-        <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
-        </div>
-    </nav>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Facturacion</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Integrantes</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Gestion de tablas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item">
+        <?= $this->Html->link(__('Cliente'), ['controller'=>'Clientes'], ['class' => 'dropdown-item']) ?> </a>
+        <a class="dropdown-item">
+        <?= $this->Html->link(__('Vendedores'), ['controller'=>'Vendedores'], ['class' => 'dropdown-item']) ?> </a>
+        <a class="dropdown-item">
+        <?= $this->Html->link(__('Categorias'), ['controller'=>'Categorias'], ['class' => 'dropdown-item']) ?> </a>
+        <a class="dropdown-item">
+        <?= $this->Html->link(__('Productos'), ['controller'=>'Productos'], ['class' => 'dropdown-item']) ?> </a>
+        <a class="dropdown-item">
+        <?= $this->Html->link(__('Ventas'), ['controller'=>'Ventas'], ['class' => 'dropdown-item']) ?> </a>
+        <a class="dropdown-item">
+        <?= $this->Html->link(__('Detalle'), ['controller'=>'Detalles'], ['class' => 'dropdown-item']) ?> </a>
+        
+     
+      </li>
+    </ul>
+  
+  </div>
+</nav>
+    
     <main class="main">
         <div class="container">
             <?= $this->Flash->render() ?>
