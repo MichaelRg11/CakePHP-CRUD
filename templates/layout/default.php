@@ -15,7 +15,7 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Sistema de facturacion';
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,7 +70,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/crudcake">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Integrantes</a>
@@ -81,7 +81,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item">
-                            <?= $this->Html->link(__('Cliente'), ['controller' => 'Clientes'], ['class' => 'dropdown-item']) ?> </a>
+                            <?= $this->Html->link(__('Cliente'), ['controller' => 'Clientes','action' => 'index'], ['class' => 'dropdown-item']) ?> </a>
                         <a class="dropdown-item">
                             <?= $this->Html->link(__('Vendedores'), ['controller' => 'Vendedores'], ['class' => 'dropdown-item']) ?> </a>
                         <a class="dropdown-item">
@@ -93,9 +93,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         <a class="dropdown-item">
                             <?= $this->Html->link(__('Detalle'), ['controller' => 'Detalles'], ['class' => 'dropdown-item']) ?> </a>
                         <a class="dropdown-item">
-                            <?= $this->Html->link(__('Taller'), ['controller' => 'Taller'], ['class' => 'dropdown-item']) ?> </a>
-
-
+                            <?= $this->Html->link(__('Taller'), ['controller' => 'Clientes','action' => 'taller'], ['class' => 'dropdown-item']) ?> </a>
                 </li>
             </ul>
 

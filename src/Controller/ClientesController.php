@@ -1,7 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
+
+use \OMR\TableRegistry;
+use SebastianBergmann\Environment\Console;
 
 /**
  * Clientes Controller
@@ -19,7 +23,12 @@ class ClientesController extends AppController
     public function index()
     {
         $clientes = $this->paginate($this->Clientes);
+        $this->set(compact('clientes'));
+    }
 
+    public function taller()
+    {
+        $clientes = $this->Clientes->find();
         $this->set(compact('clientes'));
     }
 
@@ -30,14 +39,6 @@ class ClientesController extends AppController
      * @return \Cake\Http\Response|null|void Renders view
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-
-     public function hola()
-     {
-         echo "hola controlador";
-     }
-
-
-
     public function view($id = null)
     {
         $cliente = $this->Clientes->get($id, [
